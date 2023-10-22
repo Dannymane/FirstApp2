@@ -11,16 +11,16 @@ import { HousingService } from '../housing.service'
   imports: [CommonModule,
     HousingLocationComponent,
   ],
+  providers: [HousingService], //the proper way to use Dependency injection (it supposed to be in ngModule)
   template: `
   <section>
     <form>
-      <input type="text" placeholder="Filter by city">
-      <button class="primary" type="button">Search</button>
+      <input type="text" placeholder="Filter by city" #filter>
+      <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
     </form>
   </section>
   <section class="results">
-    <app-housing-location *ngFor="let hl of housingLocationList"
-    [housingLocation2]="hl">
+    <app-housing-location *ngFor="let hl of filteredLocationList" [housingLocation2]="hl">
     </app-housing-location>
   </section>
 `,
@@ -28,11 +28,28 @@ import { HousingService } from '../housing.service'
 })
 export class HomeComponent {
   housingLocationList: HousingLocation[] = [];
-  housingService: HousingService = inject(HousingService);
+  // housingService: HousingService = inject(HousingService); 
+  filteredLocationList: HousingLocation[] = [];
 
-  constructor() {
-    this.housingLocationList = this.housingService.getAllHousingLocations();
+constructor(private housingService: HousingService) {
+  this.housingService.getAllHousingLocations().then((housingLocationList: HousingLocation[]) => {
+    this.housingLocationList = housingLocationList;
+    this.filteredLocationList = housingLocationList;
+  });
+}
+  
+  filterResults(text: string) {
+    if (!text) {
+      this.filteredLocationList = this.housingLocationList;
+    }
+  
+    this.filteredLocationList = this.housingLocationList.filter(housingLocation => {
+      const cityMatch = housingLocation?.city.toLowerCase().includes(text);
+      const nameMatch = housingLocation?.name.toLowerCase().includes(text);
+      const stateMatch = housingLocation?.state.toLowerCase().includes(text);
+
+      return cityMatch || nameMatch || stateMatch;
+    });
   }
-  // readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
 
 }
