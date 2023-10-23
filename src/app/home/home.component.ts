@@ -31,12 +31,12 @@ export class HomeComponent {
   // housingService: HousingService = inject(HousingService); 
   filteredLocationList: HousingLocation[] = [];
 
-constructor(private housingService: HousingService) {
-  this.housingService.getAllHousingLocations().then((housingLocationList: HousingLocation[]) => {
-    this.housingLocationList = housingLocationList;
-    this.filteredLocationList = housingLocationList;
-  });
-}
+  constructor(private housingService: HousingService) {
+    this.housingService.getAllHousingLocations().then((housingLocationList: HousingLocation[]) => {
+      this.housingLocationList = housingLocationList;
+      this.filteredLocationList = housingLocationList;
+    });
+  }
   
   filterResults(text: string) {
     if (!text) {
@@ -44,12 +44,11 @@ constructor(private housingService: HousingService) {
     }
   
     this.filteredLocationList = this.housingLocationList.filter(housingLocation => {
-      const cityMatch = housingLocation?.city.toLowerCase().includes(text);
-      const nameMatch = housingLocation?.name.toLowerCase().includes(text);
-      const stateMatch = housingLocation?.state.toLowerCase().includes(text);
-
+      const cityMatch = housingLocation?.city.toLowerCase().includes(text.toLowerCase());
+      const nameMatch = housingLocation?.name.toLowerCase().includes(text.toLowerCase());
+      const stateMatch = housingLocation?.state.toLowerCase().includes(text.toLowerCase());
       return cityMatch || nameMatch || stateMatch;
-    });
+    }); //for every housingLocation the lambda expression return true or false, filter takes only true elements 
   }
 
 }
