@@ -27,3 +27,18 @@ import { RouterModule } from '@angular/router';
 export class AppComponent {
   title = 'homes';
 }
+
+
+// For practice
+// template: `
+// <main>
+//   <a ">
+//     <header class="brand-name">
+//       <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
+//     </header>
+//   </a>
+//   <section class="content">
+    
+//   </section>
+// </main>
+// `,

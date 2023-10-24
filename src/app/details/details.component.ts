@@ -80,3 +80,37 @@ export class DetailsComponent {
   }
 
 }
+
+//For practicing
+// template: `
+// <article>
+//   <img class="listing-photo" 
+//     alt="Exterior photo of "/>
+//   <section class="listing-description">
+//     <h2 class="listing-heading"></h2>
+//     <p class="listing-location">, </p>
+//   </section>
+//   <section class="listing-features">
+//     <h2 class="section-heading">About this housing location</h2>
+//     <ul>
+//       <li>Units available: </li>
+//       <li>Does this location have wifi: </li>
+//       <li>Does this location have laundry: </li>
+//     </ul>
+//   </section>
+//   <section class="listing-apply">
+//     <h2 class="section-heading">Apply now to live here</h2>
+//     <form >
+//       <label for="first-name">First Name</label>
+//       <input id="first-name" type="text" >
+
+//       <label for="last-name">Last Name</label>
+//       <input id="last-name" type="text" >
+
+//       <label for="email">Email</label>
+//       <input id="email" type="email" >
+//       <button  class="primary">Apply now</button>
+//     </form>
+//   </section>
+// </article>
+// `,

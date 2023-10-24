@@ -24,3 +24,22 @@ import { RouterOutlet } from '@angular/router';
 export class HousingLocationComponent {
   @Input() housingLocation2!: HousingLocation;
 }
+
+//fot practicing
+// import { Component } from '@angular/core';
+
+// @Component({
+//   selector: 'app-housing-location',
+//   template: `
+//   <section class="listing">
+//   <img class="listing-photo"  alt="Exterior photo of ">
+//   <h2 class="listing-heading"></h2>
+//   <p class="listing-location">, </p>
+//   <a >Learn More</a>
+//   </section>
+//   `,
+//   styleUrls: ['./housing-location.component.css']
+// })
+// export class HousingLocationComponent {
+  
+// }

@@ -52,3 +52,15 @@ export class HomeComponent {
   }
 
 }
+
+//For practicing
+// template: `
+// <section>
+//   <form>
+    
+//   </form>
+// </section>
+// <section class="results">
+  
+// </section>
+// `,
