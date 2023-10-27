@@ -84,8 +84,7 @@ export class DetailsComponent {
 //For practicing
 // template: `
 // <article>
-//   <img class="listing-photo" 
-//     alt="Exterior photo of "/>
+//   <img class="listing-photo" alt="Exterior photo of "/>
 //   <section class="listing-description">
 //     <h2 class="listing-heading"></h2>
 //     <p class="listing-location">, </p>

@@ -26,10 +26,7 @@ export class HousingLocationComponent {
 }
 
 //fot practicing
-// import { Component } from '@angular/core';
 
-// @Component({
-//   selector: 'app-housing-location',
 //   template: `
 //   <section class="listing">
 //   <img class="listing-photo"  alt="Exterior photo of ">
@@ -38,8 +35,3 @@ export class HousingLocationComponent {
 //   <a >Learn More</a>
 //   </section>
 //   `,
-//   styleUrls: ['./housing-location.component.css']
-// })
-// export class HousingLocationComponent {
-  
-// }
