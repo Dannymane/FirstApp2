@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     HomeComponent,
     RouterModule,
-  ],
+  ],//
   template: `
   <main>
     <a [routerLink]="['/']">
